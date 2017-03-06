@@ -179,7 +179,7 @@ Additional parameters can be passed in from the policy - i.e. action_desc, viola
 			{% if resources[0]['MatchedFilters'] == ['PublicIpAddress'] %}
 				{% set columnNames = ['tag.Name','PublicIp','InstanceId'] %}
 			{% else %}
-				{% set columnNames = ['tag.Name','PrivateIpAddress','InstanceId','ImageId','Application','Owner'] %}
+				{% set columnNames = ['tag.Name','PrivateIpAddress','InstanceId','ImageId'] %}
 			{% endif %}
 			{{ createTable(columnNames, resources, '80') }}					   
 			
@@ -239,7 +239,7 @@ Additional parameters can be passed in from the policy - i.e. action_desc, viola
 			{% if resources[0]['GlobalPermissions'] is defined %}
 			 	{% set columnNames = ['Name','GlobalPermissions'] %}
 			{% else %}
-				{% set columnNames = ['Name','Application','Owner'] %}
+				{% set columnNames = ['Name'] %}
 			{% endif %}
 			{{ createTable(columnNames, resources, '80') }} 										  								
 
