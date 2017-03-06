@@ -86,7 +86,7 @@ def provision(config, session_factory):
         events=[
             CloudWatchEventSource(
                 {'type': 'periodic',
-                 'schedule': 'rate(5 minutes)'},
+                 'schedule': 'rate(30 minutes)'},
                 session_factory,
                 prefix="")
         ])
